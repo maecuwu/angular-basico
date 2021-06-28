@@ -1,0 +1,19 @@
+<h1> Listado de frutas </h1>
+<ul>
+    <li *ngFor="let fruta of frutas; let i = index">
+        {{ i +1 }} - {{ fruta }}
+    </li>
+</ul>
+
+<button (click)="borrarFruta()">
+    Borrar
+</button>
+
+<div *ngIf="frutaBorrada; else noBorrado">
+    <h3> Fruta borrada: <small> {{ frutaBorrada }}</small></h3>
+</div>
+
+<ng-template #noBorrado>
+    <h3> No has borrado nada </h3>
+</ng-template>
+
